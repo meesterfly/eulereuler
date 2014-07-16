@@ -35,9 +35,9 @@ if [ $# = 2 ]; then {
 
         echo; ./e; wait; echo
 
-        rm ./e
-        rm `printf "./haskell/e%03d.hi" $2`
-        rm `printf "./haskell/e%03d.o" $2`
+        rm e
+        rm `printf "haskell/e%03d.hi" $2`
+        rm `printf "haskell/e%03d.o" $2`
 
     else
         echo "that ain't a thing!"
