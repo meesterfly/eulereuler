@@ -15,7 +15,7 @@ if [ $# = 2 ]; then {
 
         echo '\n'`printf "Running the C++ solution for problem #%03d:" $2`'\n'
 
-        g++ `printf "./c++/e%03d.cpp" $2` -o e; wait
+        g++ -std=c++11 `printf "./c++/e%03d.cpp" $2` -o e; wait
 
         ./e; wait; echo;
 
