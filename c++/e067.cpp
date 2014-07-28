@@ -50,6 +50,7 @@ int main(void)
         delete last_level;
         last_level = current_level;
     }
+    
     input.close();
 
     // Find the largest sum in that last level
