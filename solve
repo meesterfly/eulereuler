@@ -1,19 +1,17 @@
-#! /usr/bin/env bash
+#!/bin/bash
 
-# Solve a Project Euler question with a given language ezpz
-
-# Expects files to be in a directory the same name of the language, 
+# Solve a Project Euler question with a given language.
+#
+# Expects files to be in a directory the same name of the language,
 # named with the convention e###.whtvr (ex: "/haskell/e001.hs")
-
-
+#
 # Usage: sh solve.sh [language] [problem number]
-
 
 if [ $# = 2 ]; then {
 
     if [ $1 = "c++" ]; then
 
-        echo '\n'`printf "Running the C++ solution for problem #%03d:" $2`'\n'
+        printf "\nRunning the C++ solution for problem #%03d:\n\n" $2
 
         g++ -std=c++11 `printf "./c++/e%03d.cpp" $2` -o e; wait
 
@@ -22,14 +20,14 @@ if [ $# = 2 ]; then {
         rm e
 
     elif [ $1 = "python" ]; then
-        
-        echo '\n'`printf "Running the Python solution for problem #%03d:" $2`'\n'
+
+        printf "\nRunning the Python solution for problem #%03d:\n\n" $2
 
         python `printf "./python/e%03d.py" $2`; wait; echo;
 
     elif [ $1 = "haskell" ]; then
-        
-        echo '\n'`printf "Running the Haskell solution for problem #%03d:" $2`'\n'
+
+        printf "\nRunning the Haskell solution for problem #%03d:\n\n" $2
 
         ghc `printf "./haskell/e%03d.hs" $2` -o e; wait
 
@@ -42,7 +40,8 @@ if [ $# = 2 ]; then {
     else
         echo "that ain't a thing!"
     fi
-    
+
 } else
     echo "that ain't enough!"
 fi
+
