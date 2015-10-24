@@ -1,5 +1,5 @@
 euler euler
 ----------------
 
-Project Euler!
+Project Euler solutions~
 
